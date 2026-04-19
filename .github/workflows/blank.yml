@@ -19,14 +19,14 @@ jobs:
           
       - name: 2. Activate
         run: |
-          # ใช้ช่อง Input เพื่อความสดใหม่ของ Token
+          # ใช้ช่อง Input วาง Code CRP
           ${{ github.event.inputs.auth_code }} --pin=123456
           
-      - name: 3. Keep-Alive (10 Mins)
+      - name: 3. Keep-Alive (60 Mins)
         run: |
           $i = 0
-          while ($i -lt 10) {
-            Write-Host "เครื่องยังทำงานอยู่... ($i/10 นาที)"
+          while ($i -lt 60) {
+            Write-Host "เครื่องยังทำงานอยู่... ($i/60 นาที)"
             Start-Sleep -Seconds 60
             $i++
           }
